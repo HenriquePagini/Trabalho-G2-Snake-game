@@ -1,11 +1,17 @@
 # 🐍 Rayquaza Snake
 
-Jogo da cobrinha desenvolvido em **Python 3** com **PyGame** pelos alunos Henrique Pagini e Pedro Algayer, com tema
+Jogo da cobrinha desenvolvido em **Python 3** com **PyGame** pelos alunos **Henrique Pagini** e **Pedro Algayer**, com tema
 inspirado em Pokémon, como trabalho da disciplina de **Algoritmos e programação** (Python Crash — Prof. Filipo Novo Mór).
 
 ![status](https://img.shields.io/badge/status-funcionando-brightgreen)
 ![python](https://img.shields.io/badge/python-3.x-blue)
 ![pygame](https://img.shields.io/badge/pygame-2.5%2B-green)
+![license](https://img.shields.io/badge/license-MIT-lightgrey)
+
+## 👥 Autores
+
+- Henrique Pagini
+- Pedro Algayer
 
 ## 🎮 Sobre o jogo
 
@@ -37,26 +43,31 @@ próprio corpo. O jogo possui:
 - Listas (para representar o corpo da cobra) e laços `while` (para o game
   loop), conforme pedido no enunciado
 
+Todas as dependências estão listadas em [`requirements.txt`](requirements.txt).
+
 ## ▶️ Como rodar
 
 ```bash
 # 1. Clone o repositório
-git clone <url-do-seu-repositorio>
-cd <pasta-do-repositorio>
+git clone https://github.com/HenriquePagini/Trabalho-G2-Snake-game
+cd Trabalho-G2-Snake-game
 
 # 2. (Recomendado) crie um ambiente virtual
 python3 -m venv venv
 source venv/bin/activate      # Windows: venv\Scripts\activate
 
-# 3. Instale as dependências
+# 3. Instale as dependências (obrigatório antes de executar)
 pip install -r requirements.txt
 
 # 4. Rode o jogo
 python jogoCobrinha.py
 ```
 
-Também funciona normalmente abrindo o projeto direto no **PyCharm** e
-executando `jogoCobrinha.py`.
+Também funciona normalmente abrindo o projeto direto no **PyCharm**:
+basta abrir a pasta do projeto, deixar o PyCharm instalar as dependências
+listadas em `requirements.txt` (ele detecta o arquivo automaticamente) e
+executar `jogoCobrinha.py`. Nenhum ajuste de código, caminho de arquivo
+ou configuração adicional é necessário.
 
 ## 🕹️ Controles
 
@@ -90,13 +101,58 @@ executando `jogoCobrinha.py`.
 ## 📁 Estrutura do projeto
 
 ```
-snake_game2/
+Trabalho-G2-Snake-game/
 ├── jogoCobrinha.py      # código principal do jogo
 ├── imagens/              # sprites usados no jogo
 ├── sons/                  # efeitos sonoros
 ├── requirements.txt      # dependências do projeto
+├── LICENSE                # licença MIT do repositório
 └── README.md              # este arquivo
 ```
+
+## 📜 Créditos e direitos autorais dos assets
+
+### Imagens (`imagens/`)
+
+Todos os sprites abaixo (`head_right.png`, `body.png`, `tail.png`,
+`apple_red.png`, `apple_green.png`, `bomb.png`, `speed.png`, `slow.png`,
+`star.png`, `shrink.png`, `dead.png`) foram **desenhados manualmente
+pelos próprios autores (Henrique Pagini e Pedro Algayer)** utilizando o
+editor de pixel art gratuito e open-source **[Piskel](https://www.piskelapp.com/)**.
+Os arquivos `.png` em si são, portanto, de autoria dos alunos.
+
+> ⚠️ **Observação sobre o personagem:** os sprites representam uma
+> releitura em pixel art do **Rayquaza**, personagem cujo design é
+> propriedade da Game Freak / Nintendo / The Pokémon Company. Embora os
+> arquivos tenham sido desenhados à mão pelos autores (e não copiados de
+> nenhuma fonte externa), o desenho do personagem em si constitui uma
+> obra derivada dessa franquia. Este projeto é de **uso estritamente
+> acadêmico e não comercial**, desenvolvido como trabalho da disciplina
+> de Algoritmos e Programação, sem qualquer intenção de violar ou se
+> apropriar dos direitos da Pokémon Company/Nintendo/Game Freak.
+
+### Sons (`sons/`)
+
+| Arquivo | Origem / autor | Licença |
+|---|---|---|
+| `beep.mp3` | *(preencher)* | *(preencher)* |
+| `morreu.mp3` | *(preencher)* | *(preencher)* |
+| `notificacao.mp3` | *(preencher)* | *(preencher)* |
+
+Caso os efeitos sonoros também tenham sido produzidos pelos autores ou
+retirados de algum banco de sons, preencha a tabela acima com a fonte e
+a licença correspondente antes de entregar. Se a origem de algum arquivo
+de som não puder ser comprovada, a recomendação é substituí-lo por um
+som de licença livre (ex: [freesound.org](https://freesound.org),
+filtrando por licença CC0) e citar a fonte aqui.
+
+## 📄 Licença
+
+Este repositório está licenciado sob a licença **MIT** — veja o arquivo
+[LICENSE](LICENSE) para mais detalhes. A licença MIT cobre o **código-fonte**
+escrito pelos autores; ela não concede automaticamente direitos sobre
+assets de terceiros eventualmente utilizados — daí a importância da
+seção de créditos acima.
 
 ## 🐛 Correções aplicadas nesta versão
 
