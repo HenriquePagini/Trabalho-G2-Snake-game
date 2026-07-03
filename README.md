@@ -47,27 +47,95 @@ Todas as dependências estão listadas em [`requirements.txt`](requirements.txt)
 
 ## ▶️ Como rodar
 
+Você **não precisa criar nenhuma pasta manualmente antes** — o comando de
+clone (`git clone`) já cria a pasta do projeto sozinho, com tudo dentro
+dela (código, imagens, sons). Escolha um dos dois métodos abaixo.
+
+### Opção A — Direto pelo PyCharm (recomendado, mais simples)
+
+1. **Escolha onde o projeto vai ficar.** Não precisa criar a pasta você
+   mesmo — só decida o local, por exemplo a Área de Trabalho
+   (`C:\Users\SeuUsuario\Desktop`) ou `Documentos`. O Git vai criar a
+   pasta `Trabalho-G2-Snake-game` sozinho dentro do local escolhido.
+2. Abra o **PyCharm**.
+3. Na tela inicial, clique em **Get from VCS** (ou, com um projeto já
+   aberto, vá em **File → New → Project from Version Control**).
+4. Em **URL**, cole:
+   ```
+   https://github.com/HenriquePagini/Trabalho-G2-Snake-game
+   ```
+5. Em **Directory**, escolha a pasta onde quer salvar (ex: a Área de
+   Trabalho) — o PyCharm cria a subpasta do projeto automaticamente ali
+   dentro. Clique em **Clone**.
+6. Quando o PyCharm terminar de abrir o projeto, ele normalmente detecta
+   sozinho o arquivo `requirements.txt` e mostra uma barra amarela no
+   topo perguntando **"Install requirements"** — clique nela e espere
+   instalar (`pygame` e `Pillow`).
+   - Se essa barra não aparecer, instale manualmente: abra o terminal
+     do próprio PyCharm (aba **Terminal**, embaixo da tela) e rode:
+     ```
+     pip install -r requirements.txt
+     ```
+7. Abra o arquivo `jogoCobrinha.py` na árvore de arquivos à esquerda,
+   clique com o botão direito nele e escolha **Run 'jogoCobrinha'**
+   (ou clique no botão ▶️ verde no canto superior direito).
+8. A janela do jogo deve abrir normalmente. Nenhuma outra configuração é
+   necessária.
+
+### Opção B — Pelo terminal (Windows, PowerShell/CMD)
+
+1. Escolha uma pasta para trabalhar, por exemplo a Área de Trabalho.
+   Abra o terminal (PowerShell ou Prompt de Comando) e navegue até lá:
+   ```powershell
+   cd Desktop
+   ```
+2. Clone o repositório (isso já cria a pasta do projeto sozinho, não
+   precisa criar nada antes):
+   ```powershell
+   git clone https://github.com/HenriquePagini/Trabalho-G2-Snake-game
+   cd Trabalho-G2-Snake-game
+   ```
+3. (Opcional, mas recomendado) crie um ambiente virtual, para não
+   misturar essas dependências com outras instaladas no sistema:
+   ```powershell
+   python -m venv venv
+   venv\Scripts\activate
+   ```
+   Se aparecer erro de permissão ao ativar no PowerShell, rode antes:
+   `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass`
+4. Instale as dependências (**obrigatório antes de executar**):
+   ```powershell
+   pip install -r requirements.txt
+   ```
+5. Rode o jogo:
+   ```powershell
+   python jogoCobrinha.py
+   ```
+
+### Linux / macOS (terminal)
+
 ```bash
-# 1. Clone o repositório
+cd ~/Desktop        # ou qualquer pasta de sua preferência
 git clone https://github.com/HenriquePagini/Trabalho-G2-Snake-game
 cd Trabalho-G2-Snake-game
-
-# 2. (Recomendado) crie um ambiente virtual
 python3 -m venv venv
-source venv/bin/activate      # Windows: venv\Scripts\activate
-
-# 3. Instale as dependências (obrigatório antes de executar)
+source venv/bin/activate
 pip install -r requirements.txt
-
-# 4. Rode o jogo
 python jogoCobrinha.py
 ```
 
-Também funciona normalmente abrindo o projeto direto no **PyCharm**:
-basta abrir a pasta do projeto, deixar o PyCharm instalar as dependências
-listadas em `requirements.txt` (ele detecta o arquivo automaticamente) e
-executar `jogoCobrinha.py`. Nenhum ajuste de código, caminho de arquivo
-ou configuração adicional é necessário.
+### ❓ Problemas comuns
+
+| Sintoma | Causa provável | Solução |
+|---|---|---|
+| `ModuleNotFoundError: No module named 'pygame'` | Dependências não instaladas | Rode `pip install -r requirements.txt` na mesma pasta do projeto |
+| `git` não é reconhecido como comando | Git não instalado | Instale o [Git para Windows](https://git-scm.com/download/win) ou baixe o repositório como ZIP pelo botão verde **Code → Download ZIP** no GitHub |
+| `python` não é reconhecido como comando | Python não instalado / não está no PATH | Instale o [Python](https://www.python.org/downloads/) marcando a opção "Add python.exe to PATH" durante a instalação |
+| Jogo abre sem som | Ambiente sem placa de som (raro) | Normal — o jogo continua 100% jogável, só sem áudio |
+
+Nenhum ajuste de código, caminho de arquivo ou configuração adicional é
+necessário em qualquer um dos métodos acima — só clonar, instalar as
+duas dependências e executar.
 
 ## 🕹️ Controles
 
@@ -135,16 +203,22 @@ Os arquivos `.png` em si são, portanto, de autoria dos alunos.
 
 | Arquivo | Origem / autor | Licença |
 |---|---|---|
-| `beep.mp3` | *(preencher)* | *(preencher)* |
-| `morreu.mp3` | *(preencher)* | *(preencher)* |
-| `notificacao.mp3` | *(preencher)* | *(preencher)* |
+| `beep.mp3` | [Epidemic Sound](https://www.epidemicsound.com/) | Licença de assinatura Epidemic Sound |
+| `morreu.mp3` | [Epidemic Sound](https://www.epidemicsound.com/) | Licença de assinatura Epidemic Sound |
+| `notificacao.mp3` | [Epidemic Sound](https://www.epidemicsound.com/) | Licença de assinatura Epidemic Sound |
 
-Caso os efeitos sonoros também tenham sido produzidos pelos autores ou
-retirados de algum banco de sons, preencha a tabela acima com a fonte e
-a licença correspondente antes de entregar. Se a origem de algum arquivo
-de som não puder ser comprovada, a recomendação é substituí-lo por um
-som de licença livre (ex: [freesound.org](https://freesound.org),
-filtrando por licença CC0) e citar a fonte aqui.
+> ⚠️ **Observação sobre a licença:** os efeitos sonoros foram baixados da
+> plataforma Epidemic Sound. É importante ressaltar que a licença da
+> Epidemic Sound é pensada principalmente para uso em **conteúdo
+> audiovisual finalizado** (vídeos, podcasts, streams) por assinantes
+> ativos, e não necessariamente para **redistribuição do arquivo de áudio
+> em si** dentro de um repositório de código público, que qualquer pessoa
+> pode baixar separadamente do restante do jogo. Este uso aqui é de
+> caráter estritamente acadêmico e não comercial. Caso haja qualquer
+> dúvida sobre essa licença cobrir este cenário específico, a alternativa
+> mais segura é substituir esses três arquivos por sons de licença livre
+> (ex: [freesound.org](https://freesound.org), filtrando por CC0) antes
+> da entrega final.
 
 ## 📄 Licença
 
